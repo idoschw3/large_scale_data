@@ -1,9 +1,5 @@
 import pandas as pd
 import streamlit as st
-from csv import excel
-
-from pandas.core.common import not_none
-
 from large_scale_data.pandas_utils import convert_excel_to_csv
 
 
@@ -41,5 +37,16 @@ else:
     else:
         st.write("Error: No data was returned from the conversion.")
 
-if df is not None:
-    x_axis = st.selectbox("What column is your x-axis?", df.columns)
+with st.container():
+    if df is not None:
+        x_axis = st.selectbox(
+            "What column is your x-axis?",
+            df.columns,
+            help="column"
+        )
+        if x_axis:
+            y_axis = st.multiselect(
+            "What column are your y-axes?",
+            df.columns,
+            help="column"
+        )
