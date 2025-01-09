@@ -161,3 +161,6 @@ cython_debug/
 
 # Streamlit cache
 .streamlit/
+
+# output files
+.output/
