@@ -1,9 +1,10 @@
 import pandas as pd
 import streamlit as st
 import openpyxl
+import os
 
 @st.cache_data
-def convert_excel_to_csv(uploaded_file, sheet_name = None):
+def convert_excel_to_csv(uploaded_file, sheet_name = None, output_dir='./output/'):
     excel_data = pd.read_excel(uploaded_file, sheet_name=sheet_name)
 
     try:
