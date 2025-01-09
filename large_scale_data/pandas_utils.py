@@ -1,5 +1,8 @@
 import pandas as pd
+import streamlit as st
+import openpyxl
 
+@st.cache_data
 def convert_excel_to_csv(uploaded_file, sheet_name = None):
     excel_data = pd.read_excel(uploaded_file, sheet_name=sheet_name)
 
@@ -16,7 +19,7 @@ def convert_excel_to_csv(uploaded_file, sheet_name = None):
             excel_data.to_csv(csv_file, index=False)
             return csv_file
 
-    except exception as e:
+    except Exception as e:
         print(f"Error converting Excel to CSV: {e}")
         return None
 
