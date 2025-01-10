@@ -12,6 +12,7 @@ numpy = "^2.2.1"
 seaborn = "^0.13.2"
 streamlit = "^1.41.1"
 openpyxl = "^3.1.5"
+matplotlib = "^3.10.0"
 
 
 [build-system]
