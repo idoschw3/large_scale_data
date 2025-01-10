@@ -43,7 +43,13 @@ else:
     else:
         st.write("Error: No data was returned from the conversion.")
 
-with st.container():
+with (st.container()):
+
+    st.markdown("""
+       This section is for basic graphs (line plot or bar plot). Only use it for appropriate data.
+       For more advanced features, skip to the next section.
+       """)
+
     if df is not None:
         x_axis = st.selectbox(
             "What column is your x-axis?",
@@ -68,4 +74,3 @@ with st.container():
             col_index = i % columns_per_row
             with cols[col_index]:
                 st.pyplot(fig)
-
