@@ -7,7 +7,7 @@ from matplotlib.lines import lineStyles
 
 
 @st.cache_data
-def convert_excel_to_csv(uploaded_file, sheet_name = None, output_dir='./output/'):
+def convert_excel_to_csv(uploaded_file, sheet_name = None, output_dir=r'C:\Users\idosc\Documents\GitHub\output'):
     excel_data = pd.read_excel(uploaded_file, sheet_name=sheet_name)
 
     try:
